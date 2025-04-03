@@ -13,16 +13,18 @@ function ArticleList() {
     setLoading(true);
     fetchAllArticles(sortBy, order)
       .then((data) => {
-        console.log(data);
+        console.log("API Response:", data); 
+        if (data.articles && data.articles.length > 0) {
+          console.log("First Article:", data.articles[0]); 
+        }
         setArticles(data.articles);
         setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
         setError("Error fetching articles");
         setLoading(false);
       });
-  }, [sortBy, order]); 
+}, [sortBy, order]); 
 
   if (loading) return <p>Loading articles...</p>;
   if (error) return <p>{error}</p>;
