@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
-import ArticleList from './components/ArticleList'
-import './App.css'
-
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes"; 
+import Navbar from "./components/NavBar"; 
+import "./App.css"; 
 
 function App() {
   return (
-    <div className='App'>
-      <h1>My News App</h1>
-      <ArticleList />
-    </div>
+      <div className="App">
+        <Navbar /> 
+        <h1>My News App</h1>
+        <AppRoutes /> 
+      </div>
   );
 }
 
