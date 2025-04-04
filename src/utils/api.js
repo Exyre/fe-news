@@ -99,3 +99,13 @@ export const updateVotesOnComment = async (comment_id, inc_votes) => {
         throw error;
     }
 };
+
+export const deleteCommentById = async (comment_id) => {
+  try {
+    const response = await axios.delete(`${API_URL}/comments/${comment_id}`);
+    return response.data;  
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+    throw error;
+  }
+};
