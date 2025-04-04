@@ -7,7 +7,6 @@ function App() {
   return (
       <div className="App">
         <Navbar /> 
-        <h1>My News App</h1>
         <AppRoutes /> 
       </div>
   );
